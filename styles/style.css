@@ -80,28 +80,28 @@ button:focus {
 .header__menu {
   display: flex;
   justify-content: space-between;
-  padding-block: 20px;
   border-block: 1px solid currentColor;
+  padding-block: 20px;
 }
 
 .header__theme-toggler {
   display: flex;
-  list-style: none;
-  gap: 20px;
   align-items: center;
+  gap: 20px;
   padding: 0;
+  list-style: none;
 }
 
 .header__theme-button {
+  position: relative;
   border-style: none;
-  font-family: inherit;
+  padding: 0;
   color: currentColor;
-  cursor: pointer;
-  background-color: transparent;
+  font-family: inherit;
   font-size: 18px;
   line-height: 104%;
-  position: relative;
-  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .header__theme-button:hover {
@@ -124,12 +124,12 @@ button:focus {
 .header__theme-button_is-active::after {
   content: '';
   position: absolute;
+  z-index: -1;
+  background-color: var(--accent-color, #ffab6b);
   inline-size: 4.5em;
   block-size: 0.4em;
-  background-color: var(--accent-color, #ffab6b);
   inset-block-start: 0.6em;
   inset-inline-start: -0.2em;
-  z-index: -1;
 }
 
 .theme_dark .header__theme-button_is-active::after {
@@ -154,12 +154,12 @@ a:focus-visible {
 }
 
 .content__blockquote {
-  inline-size: 75%;
   margin: auto auto 1.5em auto;
   font-weight: 400;
   font-size: 18px;
   font-style: italic;
   line-height: 200%;
+  inline-size: 75%;
 }
 
 .content__list {
@@ -181,10 +181,11 @@ a:focus-visible {
 .content__list-item::before {
   content: '';
   position: absolute;
-  inset-inline-start: -25px;
   object-position: center;
   background-image: url(../images/marker-light.svg);
   background-repeat: no-repeat;
+  inset-inline-start: -25px;
+  inset-block-start: 0;
   inline-size: 15px;
   block-size: 15px;
 }
@@ -196,23 +197,23 @@ a:focus-visible {
 .content__text-block_type_first-lettered .content__paragraph:first-child::first-letter {
   display: inline-block;
   margin-left: 1px;
-  padding-left: 4px;
   padding-right: 4px;
+  padding-left: 4px;
   font-weight: 700;
   font-size: 30px;
   background-color: var(--accent-color, #ffab6b);
 }
 
 .theme_dark .content__text-block_type_first-lettered .content__paragraph:first-child::first-letter {
-  background-color: transparent;
   border: 1px solid currentColor;
+  background-color: transparent;
 }
 
 .content__figure {
   position: relative;
+  margin: 7% 0;
   inset-inline-end: 5vi;
   inline-size: calc(100% + 10vi);
-  margin: 7% 0;
 }
 
 .content__picture {
@@ -220,10 +221,10 @@ a:focus-visible {
 }
 
 .content__picture-caption {
-  text-align: center;
-  font-size: 18px;
-  padding: 20px 0;
   border-block-end: 1px solid currentColor;
+  padding: 20px 0;
+  font-size: 18px;
+  text-align: center;
 }
 
 .content__card {
@@ -231,9 +232,10 @@ a:focus-visible {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  aspect-ratio: 4/3;
   margin-top: 7%;
   border: 1px solid currentColor;
+  aspect-ratio: 4/3;
+
 }
 
 .content__card-title {
@@ -250,15 +252,15 @@ a:focus-visible {
 }
 
 .colored-text::after {
-  display: inline-block;
   content: '';
   position: absolute;
+  z-index: -1;
+  display: inline-block;
+  background-color: var(--accent-color, #ffab6b);
   inline-size: 3.67em;
   block-size: 0.25em;
-  background-color: var(--accent-color, #ffab6b);
   inset-inline-start: calc(50% - 1.82em);
   inset-block-start: calc(50% + 0.05em);
-  z-index: -1;
 }
 
 .theme_dark .colored-text::after {
@@ -267,11 +269,11 @@ a:focus-visible {
 
 .footer {
   display: flex;
-  margin-top: 10%;
-  padding: 2.5%;
-  justify-content: center;
-  border-block-start: 1px solid currentColor;
   flex-shrink: 0;
+  justify-content: center;
+  margin-top: 10%;
+  border-block-start: 1px solid currentColor;
+  padding: 2.5%;
 }
 
 .footer__copyright {
